@@ -53,7 +53,7 @@ def generate_audio(message: str, pitch, out, play):
     gen_octave = lambda predicate: random() * randomize_factor + (index-index*.8) * .1 + 2.1 if predicate else random() * randomize_factor + 2.0
 
     for i, char in enumerate(message.lower()):
-        if not char.isalpha() and char == '.':
+        if not char.isalpha() or char == '.':
             continue
         if char in ('s', 't') and i < len(message) - 1 and message[i + 1] == 'h':
             current = sounds[f'{char}h']

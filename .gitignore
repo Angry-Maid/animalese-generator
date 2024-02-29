@@ -1,0 +1,4 @@
+.venv
+old/
+tests/
+output.wav

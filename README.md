@@ -5,30 +5,35 @@ This project allows you to generate audio from text in the style of animalese fr
 
 ## Usage
 
+```sh
+$ py animalese_generator/main.py -m "the quick brown fox jumps over the lazy dog" --out output.wav
 ```
-$ ./animalese.py the quick brown fox jumps over the lazy dog
+or to play sound
+```sh
+$ py animalese_generator/main.py -m "the quick brown fox jumps over the lazy dog" --play
 ```
 
 The program accepts two options, one to control the pitch (available options: 'lowest', 'low', 'med', 'high')
 and one to control the output file
-```
-$ ./animalese.py the quick brown fox jumps over the lazy dog --pitch high --out output_name.wav
+```sh
+$ py animalese_generator/main.py -m "the quick brown fox jumps over the lazy dog" --pitch high --out output_name.wav
 ```
 
 
 ## Technologies
 Project is created with:
 * pydub
+* click
 
 ## Installing required dependencies
-```
+```sh
 $ pip install pydub
 ```
 [You'll also need to install `ffmpeg` or `libav` for this to work](https://github.com/jiaaro/pydub#dependencies)
-```
+```sh
 $ brew install ffmpeg
 ```
 or
-```
+```sh
 $ brew install libav
 ```

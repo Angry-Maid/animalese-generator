@@ -46,7 +46,7 @@ def generate_audio(message: str, pitch, out, play):
     sounds = {}
 
     for index, key in enumerate(sound_key_bank, 1):
-        sounds[key] = AudioSegment.from_wav((root_sounds / pitch / f'sound{index:0>2}.wav'))
+        sounds[key] = AudioSegment.from_wav(root_sounds / pitch / f'sound{index:0>2}.wav')
 
     sound = None
 

@@ -22,7 +22,7 @@ $ py animalese_generator/main.py -m "the quick brown fox jumps over the lazy dog
 
 ## Technologies
 Project is created with:
-* pydub
+* pydub (need to switch towards pyaudio, because pydub lib isn't being updated for 2 years and their `utils.py` doesn't have propperly escaped regexes)
 * click
 
 ## Installing required dependencies

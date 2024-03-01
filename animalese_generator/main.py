@@ -50,7 +50,7 @@ def generate_audio(message: str, pitch, out, play):
 
     sound = None
 
-    gen_octave = lambda predicate: random() * randomize_factor + (index-index*.8) * .1 + 2.1 if predicate else random() * randomize_factor + 2.0
+    gen_octave = lambda predicate, index: random() * randomize_factor + (index-index*.8) * .1 + 2.1 if predicate else random() * randomize_factor + 2.0
 
     for i, char in enumerate(message.lower()):
         if not char.isalpha() or char == '.':
@@ -65,7 +65,7 @@ def generate_audio(message: str, pitch, out, play):
             current = sounds[char]
         
         if message.endswith('?'):
-            octaves = gen_octave(i >= len(message) * 0.8)
+            octaves = gen_octave(i >= len(message) * 0.8, i)
         else:
             octaves = random() * randomize_factor + 2.3
         new_sample_rate = int(current.frame_rate * (2.0 ** octaves))
